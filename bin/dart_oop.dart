@@ -1,17 +1,13 @@
 void main(){
-Student studentOne = Student();  //class object
-studentOne.name = 'sakib';
-studentOne.age = 23;
-studentOne.address = "rampura-5401, ranpgur";
+Student studentOne = Student('sakib', 23, 'rampura');  //class object
+
 
 print(studentOne.name);
 print(studentOne.age);
 print(studentOne.address);
 
-Student studentTwo = Student();  //class object
-studentTwo.name = 'tonmoy';
-studentTwo.age = 25;
-studentTwo.address = "satgara-5401, rangpur";
+Student studentTwo = Student('tonmoy', 25, 'satgara');  //class object
+
 
 print(studentTwo.name);
 print(studentTwo.age);
@@ -19,6 +15,11 @@ print(studentTwo.address);
 studentTwo.coding();
 studentOne.coding();
 studentTwo.doing('solution of calculus'); //method arguments
+int result = studentTwo.add(12, 5);
+print(result);
+
+Student studentThree = Student('rakib', 23, 'company');
+print(studentThree.name);
 }
 
 
@@ -29,6 +30,14 @@ class Student{
   int age = 0;
   String address = '';
 
+  //class constructor
+  Student(String name, int age, String address){
+    print('object is creating');
+    this.name = name;
+    this.age = age;
+    this.address = address;
+  }
+
   //method
   void coding(){
     print('$name coding');
@@ -37,5 +46,10 @@ class Student{
   //method with parameters
   void doing(String homeWork) {
     print('$name is doing $homeWork');
+  }
+
+  //method return
+  int add(a, b){
+    return a+b;
   }
 }
